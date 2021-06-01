@@ -1,12 +1,34 @@
 import React from 'react';
-import {
- Text, View
-}from 'react-native';
+import {LinearGradient} from 'expo-linear-gradient';
+import StatusBarPage from '../../components/StatusBarPage';
+import Menu from '../../components/Menu';
+
+
+import {ContainerLogo, Logo, ContainerContent, Title, SubTitle} from './styles';
 
 export default function Home(){
   return(
-    <View>
-      <Text>Página Home</Text>
-    </View>
+      <LinearGradient
+       colors={['#1dddb9', '#132742']}
+       style={{flex: 1, justifyContent: 'center'}}
+      >
+
+      <StatusBarPage
+       barStyle='light-content'
+       backgroundColor='#1dddb9'
+      />
+
+      <Menu/>
+
+      <ContainerLogo>
+        <Logo source={require('../../assets/Logo.png')} resizeMode='contain'/>
+      </ContainerLogo>
+
+      <ContainerContent>
+        <Title>SujeitoLink</Title>
+        <SubTitle>Cole seu link para encurtar</SubTitle>
+      </ContainerContent>
+
+      </LinearGradient>
   )
 }
